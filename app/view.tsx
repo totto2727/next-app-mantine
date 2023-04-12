@@ -1,12 +1,7 @@
 "use client";
 
-import { Box, Button } from "@mantine/core";
+import { Text } from "@mantine/core";
 
 export default function HomeView() {
-  return (
-    <main>
-      <Box>Hello, World!</Box>
-      <Button>Mantain UI</Button>
-    </main>
-  );
+  return <Text>Resize app to see responsive navbar in action</Text>;
 }

@@ -1,3 +1,4 @@
+import RootLayoutView from "./appshell";
 import { RootProvider } from "./provider";
 
 export default async function RootLayout({
@@ -9,7 +10,9 @@ export default async function RootLayout({
     <html lang="jp">
       <head />
       <body>
-        <RootProvider>{children}</RootProvider>
+        <RootProvider>
+          <RootLayoutView>{children}</RootLayoutView>
+        </RootProvider>
       </body>
     </html>
   );
