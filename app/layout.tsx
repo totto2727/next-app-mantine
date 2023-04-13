@@ -1,25 +1,24 @@
+import RootStyleRegistry from "./emotion";
+import { cookies } from "next/headers";
 import RootLayoutView from "./appshell";
-import { RootProvider } from "./provider";
 
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const cookieStore = cookies();
+  const themeColor =
+    cookieStore.get("mantine-color-scheme")?.value === "light"
+      ? "light"
+      : "dark";
   return (
     <html lang="jp">
       <head />
       <body>
-        <RootProvider
-          withGlobalStyles
-          withNormalizeCSS
-          theme={{
-            colorScheme: "dark",
-          }}
-          emotionCache={rtlCache}
-        >
+        <RootStyleRegistry themeColor={themeColor}>
           <RootLayoutView>{children}</RootLayoutView>
-        </RootProvider>
+        </RootStyleRegistry>
       </body>
     </html>
   );

@@ -11,7 +11,7 @@ import {
   MediaQuery,
   Burger,
   useMantineTheme,
-} from "@mantine/core";
+} from "./mantine";
 
 export default function RootLayoutView({
   children,
