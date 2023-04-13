@@ -10,7 +10,14 @@ export default async function RootLayout({
     <html lang="jp">
       <head />
       <body>
-        <RootProvider>
+        <RootProvider
+          withGlobalStyles
+          withNormalizeCSS
+          theme={{
+            colorScheme: "dark",
+          }}
+          emotionCache={rtlCache}
+        >
           <RootLayoutView>{children}</RootLayoutView>
         </RootProvider>
       </body>

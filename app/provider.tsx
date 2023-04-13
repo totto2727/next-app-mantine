@@ -1,7 +1,7 @@
 "use client";
 
-import { MantineProvider } from "@mantine/core";
 import { rtlCache } from "./cache";
+import { MantineProvider } from "@mantine/core";
 
 export function RootProvider({ children }: { children: React.ReactNode }) {
   return (
@@ -11,7 +11,6 @@ export function RootProvider({ children }: { children: React.ReactNode }) {
       theme={{
         colorScheme: "dark",
       }}
-      emotionCache={rtlCache}
     >
       {children}
     </MantineProvider>
