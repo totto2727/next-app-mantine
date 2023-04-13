@@ -22,6 +22,7 @@ export default function RootLayoutView({
   const [opened, setOpened] = useState(false);
   return (
     <AppShell
+      // AppShellのレイアウトのスタイル
       styles={{
         main: {
           background:
@@ -30,8 +31,10 @@ export default function RootLayoutView({
               : theme.colors.gray[0],
         },
       }}
+      // 非表示にするブレイクポイント
       navbarOffsetBreakpoint="sm"
       asideOffsetBreakpoint="sm"
+      // Navbar(左側のサイドバー)
       navbar={
         <Navbar
           p="md"
@@ -42,6 +45,7 @@ export default function RootLayoutView({
           <Text>Application navbar</Text>
         </Navbar>
       }
+      // Sidebar(左側のバー)
       aside={
         <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
           <Aside p="md" hiddenBreakpoint="sm" width={{ sm: 200, lg: 300 }}>
@@ -49,11 +53,13 @@ export default function RootLayoutView({
           </Aside>
         </MediaQuery>
       }
+      // Footer
       footer={
         <Footer height={60} p="md">
           Application footer
         </Footer>
       }
+      // Header
       header={
         <Header height={{ base: 50, md: 70 }} p="md">
           <div
